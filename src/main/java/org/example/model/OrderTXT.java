@@ -28,6 +28,8 @@ public class OrderTXT {
         this.total = Double.parseDouble(valor[4]);
     }
 
+
+
     @Override
     public String toString() {
         return "Order: " + id + " - Date: " + order_date + " - Total: " + total;

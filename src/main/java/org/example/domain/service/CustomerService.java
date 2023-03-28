@@ -18,4 +18,13 @@ public class CustomerService {
     public List<CustomerTXT> getAll() {
         return dao.getAll();
     }
+
+    public boolean add(CustomerTXT customer) {
+        return dao.add(customer);
+    }
+
+    public int delete(int id, boolean confirm) {
+        int result = dao.delete(id, confirm);
+        return result;
+    }
 }

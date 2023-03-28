@@ -4,6 +4,6 @@
     <entry key="CustomerFile">data/customers.txt</entry>
     <entry key="OrderFile">data/orders.txt</entry>
     <entry key="MenuItemFile">data/menuItems.txt</entry>
-    <entry key="OrderItemXML">data/orderItems.xml</entry>
+    <entry key="OrderItemFile">data/orderItems.txt</entry>
 
 </properties>

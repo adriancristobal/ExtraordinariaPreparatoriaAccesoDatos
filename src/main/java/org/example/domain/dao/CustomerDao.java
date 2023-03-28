@@ -1,12 +1,14 @@
 package org.example.domain.dao;
 
+import io.vavr.control.Either;
 import org.example.config.file.ConfigProperties;
 import org.example.model.CustomerTXT;
+import org.example.model.OrderTXT;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -29,4 +31,75 @@ public class CustomerDao {
         }
         return list;
     }
+
+    public CustomerTXT get(int id) {
+        File file = new File(ConfigProperties.getInstance().getProperty("CustomerFile"));
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String st;
+            while ((st = br.readLine()) != null) {
+                CustomerTXT customer = new CustomerTXT(st);
+                if (customer.getId() == id) {
+                    return customer;
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(CustomerDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    public int delete(int id, boolean confirm) {
+        int result = -1;
+        // Check if customer exists
+        CustomerTXT customer = get(id);
+        if (customer == null) {
+            return -1;
+        }
+
+        // Check if customer has orders
+        OrderDao orderDao = new OrderDao();
+        List<OrderTXT> orders = orderDao.getAll(id);
+        if (!orders.isEmpty()) {
+            if (!confirm) {
+                return 0;
+            }
+
+            // Delete all orders of the customer
+            for (OrderTXT order : orders) {
+                orderDao.delete(order);
+            }
+        }
+
+        // Delete customer
+        List<CustomerTXT> listCustomer = getAll();
+        File file = new File(ConfigProperties.getInstance().getProperty("CustomerFile"));
+        try (FileWriter writer = new FileWriter(file, false);  //the true will append the new data
+             BufferedWriter bw = new BufferedWriter(writer)) {
+            bw.write("");
+            listCustomer.remove(customer);
+            listCustomer.forEach(this::add);
+            return 1;
+        } catch (IOException ex) {
+            Logger.getLogger(CustomerDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return result;
+    }
+
+    public boolean add(CustomerTXT customer) {
+        File file = new File(ConfigProperties.getInstance().getProperty("CustomerFile"));
+        try (FileWriter writer = new FileWriter(file, true);  //the true will append the new data
+             BufferedWriter bw = new BufferedWriter(writer)) {
+            String content = customer.getId() + ";" + customer.getFirst_name()
+                    + ";" + customer.getLast_name() + ";" + customer.getEmail() + ";" + customer.getPhone() + "\n";
+            bw.write(content);
+            return true;
+        } catch (IOException ex) {
+            Logger.getLogger(CustomerDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
+
 }
