@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.model.txt;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,7 +23,7 @@ public class MenuItemTXT {
         this.id = Integer.parseInt(valor[0]);
         this.name = valor[1];
         this.description = valor[2];
-        this.price = Double.parseDouble(valor[4]);
+        this.price = Double.parseDouble(valor[3]);
     }
 
     @Override

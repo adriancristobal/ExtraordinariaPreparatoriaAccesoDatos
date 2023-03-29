@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.model.txt;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

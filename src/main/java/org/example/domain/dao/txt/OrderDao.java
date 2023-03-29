@@ -1,16 +1,14 @@
-package org.example.domain.dao;
+package org.example.domain.dao.txt;
 
 import io.vavr.control.Either;
 import org.example.config.file.ConfigProperties;
-import org.example.model.CustomerTXT;
-import org.example.model.MenuItemTXT;
-import org.example.model.OrderItemTXT;
-import org.example.model.OrderTXT;
+import org.example.model.txt.CustomerTXT;
+import org.example.model.txt.MenuItemTXT;
+import org.example.model.txt.OrderItemTXT;
+import org.example.model.txt.OrderTXT;
 
 import java.io.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;

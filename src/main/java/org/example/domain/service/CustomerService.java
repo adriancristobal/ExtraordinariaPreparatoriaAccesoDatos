@@ -1,8 +1,8 @@
 package org.example.domain.service;
 
 import jakarta.inject.Inject;
-import org.example.domain.dao.CustomerDao;
-import org.example.model.CustomerTXT;
+import org.example.domain.dao.txt.CustomerDao;
+import org.example.model.txt.CustomerTXT;
 
 import java.util.List;
 

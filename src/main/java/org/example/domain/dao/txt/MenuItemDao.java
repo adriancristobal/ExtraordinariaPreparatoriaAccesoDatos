@@ -1,8 +1,7 @@
-package org.example.domain.dao;
+package org.example.domain.dao.txt;
 
-import io.vavr.control.Either;
 import org.example.config.file.ConfigProperties;
-import org.example.model.MenuItemTXT;
+import org.example.model.txt.MenuItemTXT;
 
 import java.io.BufferedReader;
 import java.io.File;

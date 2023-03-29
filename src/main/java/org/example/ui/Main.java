@@ -4,9 +4,8 @@ import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
 import org.example.domain.service.CustomerService;
 import org.example.domain.service.OrderService;
-import org.example.model.MenuItemTXT;
-import org.example.model.OrderItemTXT;
-import org.example.model.OrderTXT;
+import org.example.model.txt.OrderItemTXT;
+import org.example.model.txt.OrderTXT;
 
 import java.sql.Date;
 import java.util.List;

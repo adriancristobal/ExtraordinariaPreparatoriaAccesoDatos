@@ -1,14 +1,10 @@
-package org.example.domain.dao;
+package org.example.domain.dao.txt;
 
-import io.vavr.control.Either;
 import org.example.config.file.ConfigProperties;
-import org.example.model.CustomerTXT;
-import org.example.model.OrderTXT;
+import org.example.model.txt.CustomerTXT;
+import org.example.model.txt.OrderTXT;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;

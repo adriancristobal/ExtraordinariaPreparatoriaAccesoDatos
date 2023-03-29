@@ -2,11 +2,9 @@ package org.example.domain.service;
 
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
-import org.example.domain.dao.CustomerDao;
-import org.example.domain.dao.OrderDao;
-import org.example.model.CustomerTXT;
-import org.example.model.OrderItemTXT;
-import org.example.model.OrderTXT;
+import org.example.domain.dao.txt.OrderDao;
+import org.example.model.txt.OrderItemTXT;
+import org.example.model.txt.OrderTXT;
 
 import java.util.List;
 

@@ -5,21 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49e4238c-42c9-4180-aa75-233e6c51f7c9" name="Changes" comment="KLK">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/txt/OrderItemDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/xml/CustomerDaoXML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/xml/CustomerXML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/xml/MenuItemXML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/xml/OrderXML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/xml/list/CustomersXML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/xml/list/MenuItemsXML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/MainXML.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/customers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/customers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/menuItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/menuItems.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/orderItems.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/orderItems.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/orders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/orders.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/propertiesFiles/settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/propertiesFiles/settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/MenuItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/MenuItemDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/OrderItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/OrderItemDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/txt/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/MenuItemDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/txt/MenuItemDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/txt/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/OrderItemDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/TableDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/dao/txt/TableDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/service/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MenuItemTXT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/MenuItemTXT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/OrderItemTXT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/OrderItemTXT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/OrderTXT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/OrderTXT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/CustomerTXT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/txt/CustomerTXT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MenuItemTXT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/txt/MenuItemTXT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/OrderItemTXT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/txt/OrderItemTXT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/OrderTXT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/txt/OrderTXT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/TableTXT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/txt/TableTXT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ui/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,46 +47,43 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="2NJzTLoyPNeSRNLAnNyqjcpaIp2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jrang/IdeaProjects/ExtraordinariaPreparatoriaAccesoDatos/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;0cfbc83114cc942f13f952f575856ef4&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/2dam/Desktop/AdrianCristobal2DAM/Acceso a Datos/ExtraordinariaPreparatoriaAccesoDatos/src/main/java/org/example/domain/dao/xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "0cfbc83114cc942f13f952f575856ef4",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\2dam\Desktop\AdrianCristobal2DAM\Acceso a Datos\ExtraordinariaPreparatoriaAccesoDatos\src\main\java\org\example\domain\dao\xml" />
       <recent name="C:\Users\jrang\IdeaProjects\ExtraordinariaPreparatoriaAccesoDatos\src\main\resources" />
       <recent name="C:\Users\jrang\IdeaProjects\ExtraordinariaPreparatoriaAccesoDatos\src\main\java\org\example\config" />
       <recent name="C:\Users\jrang\IdeaProjects\ExtraordinariaPreparatoriaAccesoDatos\src\main\java\org\example" />
       <recent name="C:\Users\jrang\IdeaProjects\ExtraordinariaPreparatoriaAccesoDatos" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.config.jdbc" />
     </key>
   </component>
   <component name="RunManager">
@@ -116,6 +120,7 @@
       <workItem from="1679940780926" duration="250000" />
       <workItem from="1679941200164" duration="3799000" />
       <workItem from="1679945018377" duration="4524000" />
+      <workItem from="1680086531017" duration="5198000" />
     </task>
     <task id="LOCAL-00001" summary="KLK">
       <created>1679772914036</created>
@@ -130,6 +135,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="KLK" />
     <option name="LAST_COMMIT_MESSAGE" value="KLK" />
@@ -138,14 +154,29 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/domain/dao/OrderDao.java</url>
-          <line>42</line>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/domain/dao/txt/OrderDao.java</url>
+          <line>40</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/domain/dao/OrderDao.java</url>
-          <line>70</line>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/domain/dao/txt/OrderDao.java</url>
+          <line>68</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/ui/Main.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/domain/dao/txt/MenuItemDao.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/domain/dao/txt/CustomerDao.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
