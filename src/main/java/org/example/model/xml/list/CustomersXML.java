@@ -4,19 +4,21 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import lombok.AllArgsConstructor;
 import org.example.model.xml.CustomerXML;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
 @XmlRootElement(name = "customers")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class CustomersXML {
     @XmlElement(name = "customer")
     private List<CustomerXML> customers;
 
-    public CustomersXML(List<CustomerXML> customers) {
-        this.customers = customers;
+    public CustomersXML() {
+        this.customers = new ArrayList<>();
     }
 
     public List<CustomerXML> getCustomers() {

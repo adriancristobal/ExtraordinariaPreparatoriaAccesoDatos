@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<customers>
+    <customer>
+        <firstName>John</firstName>
+        <lastName>Doe</lastName>
+        <email>johndoe@example.com</email>
+        <phone>555-1234</phone>
+        <order>
+            <table_id>1</table_id>
+            <order_date>2023-11-24</order_date>
+            <total>67.99</total>
+            <menuItems>
+                <menuItem>
+                    <name>Steak</name>
+                    <price>18.99</price>
+                    <quantity>1</quantity>
+                </menuItem>
+                <menuItem>
+                    <name>Caesar Salad</name>
+                    <price>17.98</price>
+                    <quantity>2</quantity>
+                </menuItem>
+            </menuItems>
+        </order>
+        <order>
+            <table_id>3</table_id>
+            <order_date>2021-05-01</order_date>
+            <total>15.0</total>
+            <menuItems/>
+        </order>
+    </customer>
+    <customer>
+        <firstName>Jane</firstName>
+        <lastName>Smith</lastName>
+        <email>janesmith@example.com</email>
+        <phone>555-5678</phone>
+        <order>
+            <table_id>2</table_id>
+            <order_date>2021-05-01</order_date>
+            <total>43.0</total>
+            <menuItems/>
+        </order>
+    </customer>
+    <customer>
+        <firstName>Bob</firstName>
+        <lastName>Johnson</lastName>
+        <email>bobjohnson@example.com</email>
+        <phone>555-4321</phone>
+        <order>
+            <table_id>4</table_id>
+            <order_date>2021-05-01</order_date>
+            <total>28.0</total>
+            <menuItems/>
+        </order>
+    </customer>
+</customers>
