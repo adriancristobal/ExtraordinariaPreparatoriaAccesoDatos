@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.cglib.core.Local;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
@@ -16,7 +18,7 @@ public class OrderTXT {
     private int id;
     private int table_id;
     private int customer_id;
-    private Date order_date;
+    private LocalDate order_date;
     private Double total;
 
     public OrderTXT (String linea){
@@ -24,7 +26,7 @@ public class OrderTXT {
         this.id = Integer.parseInt(valor[0]);
         this.table_id = Integer.parseInt(valor[1]);
         this.customer_id = Integer.parseInt(valor[2]);
-        this.order_date = Date.valueOf(valor[3]);
+        this.order_date = LocalDate.parse(valor[3]);
         this.total = Double.parseDouble(valor[4]);
     }
 

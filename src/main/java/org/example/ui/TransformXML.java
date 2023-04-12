@@ -1,5 +1,6 @@
 package org.example.ui;
 
+import io.vavr.collection.Tree;
 import io.vavr.control.Either;
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
@@ -7,12 +8,15 @@ import org.example.domain.service.txt.CustomerService;
 import org.example.domain.service.txt.MenuItemService;
 import org.example.domain.service.txt.OrderItemService;
 import org.example.domain.service.txt.OrderService;
+import org.example.domain.service.xml.CustomerServiceXML;
 import org.example.model.txt.CustomerTXT;
 import org.example.model.txt.MenuItemTXT;
+import org.example.model.txt.OrderItemTXT;
 import org.example.model.txt.OrderTXT;
 import org.example.model.xml.CustomerXML;
 import org.example.model.xml.MenuItemXML;
 import org.example.model.xml.OrderXML;
+import org.example.model.xml.list.CustomersXML;
 import org.example.model.xml.list.MenuItemsXML;
 
 
@@ -29,55 +33,37 @@ public class TransformXML {
         OrderService orderService = container.select(OrderService.class).get();
         OrderItemService orderItemService = container.select(OrderItemService.class).get();
 
+        CustomerServiceXML customerServiceXML = container.select(CustomerServiceXML.class).get();
+
         List<CustomerTXT> customerList = customerService.getAll();
         List<OrderTXT> orderList = orderService.getAll();
         List<MenuItemTXT> menuItemList = menuItemService.getAll();
+        List<OrderItemTXT> orderItemList = orderItemService.getAll();
         //Either<Integer, List<Client>> listC = clientsDAOdb.getAll();
 
 
         List<CustomerXML> customers = new ArrayList<>();
 
+        customerList.forEach(c -> {
+            List<OrderXML> orders = new ArrayList<>();
+            orderList.stream().filter(order -> order.getCustomer_id() == c.getId()).forEach(order -> {
+                List<MenuItemXML> menuItems = new ArrayList<>();
+                orderItemList.stream().filter(orderItem -> orderItem.getOrder_id() == order.getId()).forEach(orderItem -> {
+                    String name = menuItemList.stream().filter(menuItem -> menuItem.getId() == orderItem.getMenu_item_id()).findFirst().get().getName();
+                    MenuItemXML menuItemXML = new MenuItemXML(name, orderItem.getPrice(), orderItem.getQuantity());
+                    menuItems.add(menuItemXML);
+                });
 
-        for (CustomerTXT c :
-                customerList) {
+                OrderXML orderXML = new OrderXML(order.getId(), order.getOrder_date(), order.getTotal(), new MenuItemsXML(menuItems));
+                orders.add(orderXML);
+            });
 
-            List<OrderTXT> orders = orderList.stream()
-                    .filter(order -> order.getCustomer_id() == c.getId()).toList();
-
-            for (OrderTXT order :
-                    orders) {
-
-                MenuItemsXML menuItemsXML = new MenuItemsXML(menuItemList.stream()
-                        .filter(menuItem -> menuItem.getId() == order.ge())
-                        .map(orderItem -> new MenuItemXML(menuItemList.stream()
-                                .filter(menuItem -> menuItem.getId() == orderItem.getMenu_item_id())
-                                .map(menuItem -> menuItem.getId())
-                                .toList()))
-                        .toList());
-            }
-
-
-
-
-
-            System.out.println(orders);
-            // i mapped the list of purchases with the items of every client
             CustomerXML customerXML = new CustomerXML(c.getFirst_name(), c.getLast_name(), c.getEmail(), c.getPhone(), orders);
             customers.add(customerXML);
-        }
+        });
+
         CustomersXML customersXML= new CustomersXML(customers);
-        int code= clientsDAOxml.add(clientsXml);
-        System.out.println(code);
-        String message;
-        if (code != 0) {
-            message = switch (code) {
-                case NumericConstants.NON_RELATED_TO_DB_EXCEPTION_CODE ->
-                        "ERROR JAXB connection";
-                default -> "ERROR JAXB writing";
-            };
-        } else {
-            message = "Clients backup done!";
-        }
+        String message = customerServiceXML.add(customersXML);
         System.out.println(message);
 
 

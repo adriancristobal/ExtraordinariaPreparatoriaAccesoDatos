@@ -115,4 +115,24 @@ public class CustomerDaoXML {
 
         return result;
     }
+
+    public int add(CustomersXML customersXML){
+        JAXBContext context;
+        Marshaller marshaller;
+        try {
+            context = JAXBContext.newInstance(CustomersXML.class);
+            marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        } catch (JAXBException e) {
+            return -2;
+        }
+        Path xmlFile = Paths
+                .get(ConfigProperties.getInstance().getProperty("CustomerXMLFile"));
+        try {
+            marshaller.marshal(customersXML, Files.newOutputStream(xmlFile));
+        } catch (JAXBException | IOException e) {
+            return -1;
+        }
+        return 0;
+    }
 }

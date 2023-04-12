@@ -8,6 +8,7 @@ import org.example.model.txt.OrderItemTXT;
 import org.example.model.txt.OrderTXT;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -40,7 +41,7 @@ public class Main {
                     System.out.println("Orders by customer: " + orderService.getAll(customerId));
                 }
                 case 3 -> {
-                    OrderTXT orderTXT = new OrderTXT(4, 1, 2, Date.valueOf("2021-05-01"), 43.0);
+                    OrderTXT orderTXT = new OrderTXT(4, 1, 2, LocalDate.parse("2021-09-23"), 43.0);
                     OrderItemTXT orderItemTXT1 = new OrderItemTXT(3, 1, 1, 2, 15.0);
                     OrderItemTXT orderItemTXT2 = new OrderItemTXT(4, 1, 2, 1, 28.0);
                     List<OrderItemTXT> list = List.of(orderItemTXT1, orderItemTXT2);

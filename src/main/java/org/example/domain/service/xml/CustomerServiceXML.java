@@ -38,4 +38,15 @@ public class CustomerServiceXML {
         }
     }
 
+    public String add(CustomersXML customers){
+        int result = dao.add(customers);
+        if (result == 1) {
+            return "Customer added";
+        } else if (result == 0) {
+            return "Customer already exists";
+        } else {
+            return "Error";
+        }
+    }
+
 }

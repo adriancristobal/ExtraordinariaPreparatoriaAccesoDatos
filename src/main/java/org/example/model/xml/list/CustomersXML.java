@@ -4,10 +4,6 @@ import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 import org.example.model.xml.CustomerXML;
 
 import java.util.ArrayList;
@@ -19,8 +15,9 @@ public class CustomersXML {
     @XmlElement(name = "customer")
     private List<CustomerXML> customers;
 
-    public CustomersXML() {
-        customers=new ArrayList<>();}
+    public CustomersXML(List<CustomerXML> customers) {
+        this.customers = customers;
+    }
 
     public List<CustomerXML> getCustomers() {
         return customers;
