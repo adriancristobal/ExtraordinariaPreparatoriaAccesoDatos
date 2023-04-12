@@ -2,8 +2,8 @@ package org.example.ui;
 
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
-import org.example.domain.service.CustomerService;
-import org.example.domain.service.OrderService;
+import org.example.domain.service.txt.CustomerService;
+import org.example.domain.service.txt.OrderService;
 import org.example.model.txt.OrderItemTXT;
 import org.example.model.txt.OrderTXT;
 

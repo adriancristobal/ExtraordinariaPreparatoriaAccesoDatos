@@ -1,9 +1,9 @@
 package org.example.model.xml;
 
-import jakarta.xml.bind.annotation.XmlAccessType;
-import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.*;
 import lombok.*;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -12,9 +12,13 @@ import lombok.*;
 @Getter
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(propOrder = { "first_name", "last_name", "email", "phone", "order"})
 public class CustomerXML {
+    @XmlElement(name = "firstName")
     private String first_name;
+    @XmlElement(name = "lastName")
     private String last_name;
     private String email;
     private String phone;
+    private List<OrderXML> order;
 }

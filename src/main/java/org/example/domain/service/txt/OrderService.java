@@ -1,4 +1,4 @@
-package org.example.domain.service;
+package org.example.domain.service.txt;
 
 import io.vavr.control.Either;
 import jakarta.inject.Inject;
@@ -15,6 +15,10 @@ public class OrderService {
     @Inject
     public OrderService(OrderDao dao) {
         this.dao = dao;
+    }
+
+    public List<OrderTXT> getAll() {
+        return dao.getAll();
     }
 
     public List<OrderTXT> getAll(int idCustomer) {

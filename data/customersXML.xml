@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<customers>
+    <customer>
+        <firstName>John</firstName>
+        <lastName>Doe</lastName>
+        <email>johndoe@example.com</email>
+        <phone>555-1234</phone>
+        <order>
+            <table_id>1</table_id>
+            <order_date>2022-12-28</order_date>
+            <total>25.99</total>
+            <menuItems>
+                <menuItem>
+                    <name>Burger</name>
+                    <price>10.99</price>
+                    <quantity>2</quantity>
+                </menuItem>
+                <menuItem>
+                    <name>Soda</name>
+                    <price>2.99</price>
+                    <quantity>1</quantity>
+                </menuItem>
+                <menuItem>
+                    <name>Vanilla ice cream with chocolate sauce</name>
+                    <price>12.01</price>
+                    <quantity>3</quantity>
+                </menuItem>
+            </menuItems>
+        </order>
+        <order>
+            <table_id>2</table_id>
+            <order_date>2023-02-27</order_date>
+            <total>42.50</total>
+            <status>completed</status>
+            <menuItems>
+                <menuItem>
+                    <name>A juicy steak with mashed potatoes</name>
+                    <price>28.50</price>
+                    <quantity>2</quantity>
+                </menuItem>
+                <menuItem>
+                    <name>Wine</name>
+                    <price>14.00</price>
+                    <quantity>1</quantity>
+                </menuItem>
+            </menuItems>
+        </order>
+    </customer>
+    <customer>
+        <firstName>Jane</firstName>
+        <lastName>Smith</lastName>
+        <email>janesmith@example.com</email>
+        <phone>555-5678</phone>
+        <order>
+            <table_id>1</table_id>
+            <order_date>2020-12-28</order_date>
+            <total>25.99</total>
+            <menuItems>
+                <menuItem>
+                    <name>Burger</name>
+                    <price>10.99</price>
+                    <quantity>1</quantity>
+                </menuItem>
+            </menuItems>
+        </order>
+    </customer>
+</customers>

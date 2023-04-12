@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 @Getter
-@XmlRootElement
+@XmlRootElement(name = "menuItem")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class MenuItemXML {
 

@@ -1,4 +1,4 @@
-package org.example.domain.service;
+package org.example.domain.service.txt;
 
 import jakarta.inject.Inject;
 import org.example.domain.dao.txt.CustomerDao;

@@ -1,49 +1,118 @@
 package org.example.domain.dao.xml;
 
-import io.vavr.control.Either;
-import jakarta.inject.Inject;
-import org.example.domain.dao.common.SQLQueries;
-import org.example.domain.dao.xml.connectionsJDBC.DBConnection;
-import org.example.model.xml.CustomerXML;
-import org.springframework.core.NestedRuntimeException;
-import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
+import jakarta.inject.Inject;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
+import org.example.config.file.ConfigProperties;
+import org.example.model.txt.MenuItemTXT;
+import org.example.model.xml.CustomerXML;
+import org.example.model.xml.MenuItemXML;
+import org.example.model.xml.OrderXML;
+import org.example.model.xml.list.CustomersXML;
+import org.example.model.xml.list.MenuItemsXML;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
+
 
 public class CustomerDaoXML {
 
-    private DBConnection dbConnection;
+    public CustomersXML getAll() {
+        CustomersXML listCustomers = null;
 
-    @Inject
-    public CustomerDaoXML(DBConnection dbConnection){
-        this.dbConnection = dbConnection;
+        try {
+            JAXBContext context = JAXBContext.newInstance(CustomersXML.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            Path xmlFile = Paths
+                    .get(ConfigProperties.getInstance().getProperty("CustomerXMLFile"));
+
+            // Read the XML document from the file
+            listCustomers = (CustomersXML) unmarshaller.unmarshal(Files.newInputStream(xmlFile));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return listCustomers;
     }
 
-    @Override
-    public Either<Integer, List<CustomerXML>> getAll(){
-        List<Reader> listReader = new ArrayList();
-        int result = -1;
+    public CustomersXML getAll(String itemName) {
+        CustomersXML listCustomers = null;
+
         try {
+            JAXBContext context = JAXBContext.newInstance(CustomersXML.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
-            con = db.getConnection();
-            stmt = con.prepareStatement(QueryStrings.GET_ALL_READERS);
-            resultSet = stmt.executeQuery();
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            Path xmlFile = Paths
+                    .get(ConfigProperties.getInstance().getProperty("CustomerXMLFile"));
 
-            while (resultSet.next()) {
-                listReader.add(Reader.builder()
-                        .id(resultSet.getInt(1))
-                        .name_reader(resultSet.getString(2))
-                        .birth_reader(resultSet.getDate(3))
-                        .build());
+            // Read the XML document from the file
+            List<CustomerXML> filterListCustomers = new ArrayList<>();
+            listCustomers = (CustomersXML) unmarshaller.unmarshal(Files.newInputStream(xmlFile));
+            for (CustomerXML customerXML : listCustomers.getCustomers()) {
+                List<OrderXML> orderXMLList = customerXML.getOrder();
+                for (OrderXML orderXML : orderXMLList) {
+                    MenuItemsXML menuItemsXMLList = orderXML.getMenuItems();
+                    List<MenuItemXML> menuItemXMLList = menuItemsXMLList.getMenuItems();
+                    for (MenuItemXML menuItemXML : menuItemXMLList) {
+                        if (menuItemXML.getName().equals(itemName)) {
+                            filterListCustomers.add(customerXML);
+                        }
+                    }
+                }
+
             }
-            return Either.right(listReader);
-        } catch (Exception ex) {
-            Logger.getLogger(DaoReaderJDBCImpl.class.getName()).log(Level.SEVERE, null, ex);
-            return Either.left(result);
-        } finally {
+            listCustomers.setCustomers(filterListCustomers);
 
-            db.closeConnection(con);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
+        return listCustomers;
+    }
+
+
+    public int delete(String customerName) {
+        int result = 0;
+
+        try {
+            JAXBContext context = JAXBContext.newInstance(CustomersXML.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            Path xmlFile = Paths
+                    .get(ConfigProperties.getInstance().getProperty("CustomerXMLFile"));
+
+            // Read the XML document from the file
+            CustomersXML customerList = (CustomersXML) unmarshaller.unmarshal(Files.newInputStream(xmlFile));
+            List<CustomerXML> listCustomers = customerList.getCustomers();
+            for (CustomerXML customerXML : listCustomers) {
+                if (customerXML.getFirst_name().equals(customerName)) {
+                    listCustomers.remove(customerXML);
+                    break;
+                }
+            }
+            customerList.setCustomers(listCustomers);
+            marshaller.marshal(customerList, Files.newOutputStream(xmlFile));
+            result = 1;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 }
